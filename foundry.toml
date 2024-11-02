@@ -4,3 +4,14 @@ out = "out"
 libs = ["lib"]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+ffi = false
+fuzz_runs = 100_000
+optimizer = true
+optimizer_runs = 1000000
+remappings = ["ds-test/=lib/ds-test/src/", "solmate/=lib/solmate/src/", "boringsolidity/=lib/boringsolidity/contracts/"]
+verbosity = 1
+
+# Extreme Fuzzing CI Profile :P
+[profile.ci]
+fuzz_runs = 100_000
+verbosity = 4
